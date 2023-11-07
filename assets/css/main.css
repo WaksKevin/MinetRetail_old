@@ -1,25 +1,43 @@
 /*--------------------------------------------------------------
-# Color Variables
+# Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
+/* Fonts */
+:root {
+    --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-primary: "Montserrat", sans-serif;
+    --font-secondary: "Lato", sans-serif;
+}
+
 /* Global Colors */
 :root {
     --color-default: #212529;
     --color-default-rgb: 33, 37, 41;
+    --color-default-inverse: #ffffff;
+    --color-default-inverse-rgb: 255, 255, 255;
     --color-background: #ffffff;
     --color-background-rgb: 255, 255, 255;
-    --color-primary: #e84545;
+    --color-background-inverse: #040b14;
+    --color-background-inverse-rgb: 4, 11, 20;
+    --color-primary: #e32636;
     --color-primary-rgb: 232, 69, 69;
     --color-secondary: #32353a;
     --color-secondary-rgb: 50, 53, 58;
-    --color-box-background: #ffffff;
-    --color-box-background-rgb: 255, 255, 255;
-    --color-inverse: #ffffff;
-    --color-inverse-rgb: 255, 255, 255;
+}
+
+/* Nav Menu Colors */
+:root {
+    --color-nav: #3a3939;
+    --color-nav-hover: #e32636;
+    --color-nav-dropdown: #3a3939;
+    --color-nav-dropdown-hover: #e32636;
+    --color-nav-dropdown-background: #ffffff;
+    --color-nav-mobile-background: #ffffff;
 }
 
 /* Smooth scroll */
-:root {
+:root,
+html {
     scroll-behavior: smooth;
 }
 
@@ -29,7 +47,7 @@
 #preloader {
     position: fixed;
     inset: 0;
-    z-index: 9999;
+    z-index: 30;
     overflow: hidden;
     background-color: var(--color-background);
     transition: all 0.6s ease-out;
@@ -109,23 +127,23 @@
     opacity: 0;
     right: 15px;
     bottom: 15px;
-    z-index: 99999;
+    z-index: 20;
     background-color: var(--color-primary);
     width: 40px;
     height: 40px;
-    border-radius: 4px;
+    border-radius: 50px;
     transition: all 0.4s;
 }
 
 .scroll-top i {
     font-size: 24px;
-    color: #ffffff;
+    color: var(--color-default-inverse);
     line-height: 0;
 }
 
 .scroll-top:hover {
     background-color: rgba(var(--color-primary-rgb), 0.8);
-    color: #ffffff;
+    color: var(--color-default-inverse);
 }
 
 .scroll-top.active {
@@ -141,3 +159,217 @@
         transition-delay: 0 !important;
     }
 }
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+    color: var(--color-default);
+    font-family: var(--font-default);
+    background: url("../img/PictureHome.png") center top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body:before {
+    content: "";
+    background: rgba(22, 0, 0, 0.5);
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: rgba(var(--color-primary-rgb), 0.7);
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
+}
+
+.container,
+.container-fluid {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+@media (max-width: 1199px) {
+
+    .container,
+    .container-fluid {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Sidebar
+--------------------------------------------------------------*/
+#sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    transition: all ease-in-out 0.5s;
+    z-index: 20;
+    transition: all 0.5s;
+    padding: 0 15px;
+    background: rgba(var(--color-background-inverse-rgb), 0.9);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow-y: auto;
+}
+
+@media (max-width: 1199px) {
+    #sidebar {
+        left: -300px;
+    }
+}
+
+/* Navigation Menu */
+.nav-menu {
+    padding: 30px 0 0 0;
+}
+
+.nav-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu>ul>li {
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-menu a,
+.nav-menu a:focus {
+    display: flex;
+    align-items: center;
+    color: #a8a9b4;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.nav-menu a i,
+.nav-menu a:focus i {
+    font-size: 24px;
+    padding-right: 8px;
+    color: #6f7180;
+}
+
+.nav-menu a:hover,
+.nav-menu .active,
+.nav-menu .active:focus,
+.nav-menu li:hover>a {
+    text-decoration: none;
+    color: var(--color-default-inverse);
+}
+
+.nav-menu a:hover i,
+.nav-menu .active i,
+.nav-menu .active:focus i,
+.nav-menu li:hover>a i {
+    color: var(--color-nav-hover);
+}
+
+/*--------------------------------------------------------------
+# Topbar
+--------------------------------------------------------------*/
+#topbar {
+    height: 40px;
+    transition: all 0.5s;
+    margin-left: 300px;
+    width: calc(100% - 300px);
+}
+
+@media (max-width: 1199px) {
+    #topbar {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+    margin-left: 300px;
+    width: calc(100% - 300px);
+    transition: all 0.5s;
+    height: 80px;
+    position: sticky;
+    top: 0;
+    background: rgba(var(--color-background-inverse-rgb), 0.4);
+}
+
+/* Mobile Navigation */
+.mobile-nav-toggle {
+    border: 0;
+    font-size: 24px;
+    transition: all 0.4s;
+    outline: none !important;
+    background-color: var(--color-primary);
+    color: var(--color-default-inverse);
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.mobile-nav-active {
+    overflow: hidden;
+}
+
+.mobile-nav-active #sidebar {
+    left: 0;
+}
+
+@media (max-width: 1199px) {
+    #header {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+#main {
+    margin-left: 300px;
+    width: calc(100% - 300px);
+    position: relative;
+}
+
+@media (max-width: 1199px) {
+    #main {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
