@@ -1,0 +1,18 @@
+/*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
+body {
+    background: url("../img/home/home-bg.png") 40% top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#main .row .col-12 a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;;
+    background: var(--color-box-background);
+    opacity: 0.9;
+}

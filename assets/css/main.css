@@ -23,6 +23,8 @@
     --color-primary-rgb: 232, 69, 69;
     --color-secondary: #32353a;
     --color-secondary-rgb: 50, 53, 58;
+    --color-box-background: #e4c7c7;
+    --color-box-background-rgb: 255, 255, 255;
 }
 
 /* Nav Menu Colors */
@@ -65,26 +67,26 @@ html {
     border-radius: 50%;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
     position: absolute;
-    left: 50%;
+    left: 40%;
 }
 
 #preloader div:nth-child(1) {
-    left: calc(50% + 8px);
+    left: calc(40% + 8px);
     animation: animate-preloader-1 0.6s infinite;
 }
 
 #preloader div:nth-child(2) {
-    left: calc(50% + 8px);
+    left: calc(40% + 8px);
     animation: animate-preloader-2 0.6s infinite;
 }
 
 #preloader div:nth-child(3) {
-    left: calc(50% + 32px);
+    left: calc(40% + 32px);
     animation: animate-preloader-2 0.6s infinite;
 }
 
 #preloader div:nth-child(4) {
-    left: calc(50% + 56px);
+    left: calc(40% + 56px);
     animation: animate-preloader-3 0.6s infinite;
 }
 
@@ -115,6 +117,44 @@ html {
 
     100% {
         transform: translate(24px, 0);
+    }
+}
+
+@media (min-width: 600px) {
+    #preloader div {
+        left: 45%;
+    }
+
+    #preloader div:nth-child(1),
+    #preloader div:nth-child(2) {
+        left: calc(45% + 8px);
+    }
+
+    #preloader div:nth-child(3) {
+        left: calc(45% + 32px);
+    }
+
+    #preloader div:nth-child(4) {
+        left: calc(45% + 56px);
+    }
+}
+
+@media (min-width: 1300px) {
+    #preloader div {
+        left: 50%;
+    }
+
+    #preloader div:nth-child(1),
+    #preloader div:nth-child(2) {
+        left: calc(50% + 8px);
+    }
+
+    #preloader div:nth-child(3) {
+        left: calc(50% + 32px);
+    }
+
+    #preloader div:nth-child(4) {
+        left: calc(50% + 56px);
     }
 }
 
@@ -166,9 +206,6 @@ html {
 body {
     color: var(--color-default);
     font-family: var(--font-default);
-    background: url("../img/PictureHome.png") center top;
-    background-size: cover;
-    background-attachment: fixed;
 }
 
 body:before {
@@ -230,8 +267,8 @@ h6 {
     transition: all 0.5s;
     padding: 0 15px;
     background: rgba(var(--color-background-inverse-rgb), 0.9);
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-top-right-radius: 45px;
+    /* border-bottom-right-radius: 30px; */
     overflow-y: auto;
 }
 
@@ -314,8 +351,9 @@ h6 {
     margin-left: 300px;
     width: calc(100% - 300px);
     transition: all 0.5s;
-    height: 80px;
+    height: 90px;
     position: sticky;
+    z-index: 10;
     top: 0;
     background: rgba(var(--color-background-inverse-rgb), 0.4);
 }
@@ -357,15 +395,17 @@ h6 {
 # Main
 --------------------------------------------------------------*/
 #main {
+    position: relative;
     margin-left: 300px;
     width: calc(100% - 300px);
-    position: relative;
+    height: calc(100vh - 90px - 40px);
+    /* 100vh - header - top bar */
 }
 
 @media (max-width: 1199px) {
     #main {
         margin-left: 0;
-        width: 100%;
+        width: 100%
     }
 }
 
