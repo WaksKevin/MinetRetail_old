@@ -7,12 +7,166 @@ body {
     background-attachment: fixed;
 }
 
-#main .row .col-12 a{
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+#main .solutions-img {
     display: flex;
+    flex-direction: column;
+    padding: 30px 0;
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100%;;
-    background: var(--color-box-background);
-    opacity: 0.9;
+    width: 100%;
+    background: rgba(var(--color-background-inverse-rgb), 0.7);
+    border: 4px solid rgba(var(--color-inverse-rgb), 0.2);
+    position: relative;
+    transition: 0.5s;
+}
+
+#main .solutions-img::before {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 30px;
+    height: 30px;
+    z-index: var(--z-default);
+    content: "";
+    border-left: 5px solid var(--color-secondary);
+    border-top: 5px solid var(--color-secondary);
+    transition: 0.5s;
+}
+
+#main .solutions-img::after {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    width: 30px;
+    height: 30px;
+    z-index: var(--z-default);
+    content: "";
+    border-right: 5px solid var(--color-secondary);
+    border-bottom: 5px solid var(--color-secondary);
+    transition: 0.5s;
+}
+
+#main .solutions-img #individual-solutions {
+    background: url("../img/home/home-main-1.png") center;
+    transition: 0.4s;
+}
+
+#main .solutions-img #business-solutions {
+    background: url("../img/home/home-main-2.png") center;
+    transition: 0.4s;
+}
+
+#main .solutions-img #corporate-product {
+    background: url("../img/home/home-main-3.png") center;
+    transition: 0.4s;
+}
+
+#main .solutions-img #teachers-medical-scheme-portal {
+    background: url("../img/home/home-main-4.png") center;
+    transition: 0.4s;
+}
+
+#main .solutions-img:hover {
+    transform: scale(1.03);
+    background: rgba(var(--color-background-inverse-rgb), 0.9);
+}
+
+#main .solutions-img:hover::before {
+    left: 5px;
+    top: 5px;
+}
+
+#main .solutions-img:hover::after {
+    right: 5px;
+    bottom: 5px;
+}
+
+#main .solutions-img:hover {
+    transform: scale(1.03);
+}
+
+#main .solutions-img:hover #individual-solutions {
+    background: url("../img/home/home-main-1-hover.png") center;
+}
+
+#main .solutions-img:hover #business-solutions {
+    background: url("../img/home/home-main-2-hover.png") center;
+}
+
+#main .solutions-img:hover #corporate-product {
+    background: url("../img/home/home-main-3-hover.png") center;
+}
+
+#main .solutions-img:hover #teachers-medical-scheme-portal {
+    background: url("../img/home/home-main-4-hover.png") center;
+}
+
+#main .solutions-img #individual-solutions,
+#main .solutions-img #business-solutions,
+#main .solutions-img #corporate-product,
+#main .solutions-img #teachers-medical-scheme-portal {
+    width: 100%;
+    height: 70%;
+}
+
+#main .solutions-img #individual-solutions,
+#main .solutions-img #business-solutions,
+#main .solutions-img #corporate-product,
+#main .solutions-img #teachers-medical-scheme-portal,
+#main .solutions-img:hover #individual-solutions,
+#main .solutions-img:hover #business-solutions,
+#main .solutions-img:hover #corporate-product,
+#main .solutions-img:hover #teachers-medical-scheme-portal {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 600px) {
+    #main .solutions-img {
+        font-size: var(--font-size-xs);
+    }
+
+    #main .solutions-img::before {
+        left: 10px;
+        top: 10px;
+    }
+
+    #main .solutions-img::after {
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    #main .solutions-img::before {
+        left: 5px;
+        top: 5px;
+        width: 10px;
+        height: 10px;
+        border-left: 3px solid var(--color-secondary);
+        border-top: 3px solid var(--color-secondary);
+    }
+
+    #main .solutions-img::after {
+        right: 5px;
+        bottom: 5px;
+        width: 10px;
+        height: 10px;
+        border-right: 3px solid var(--color-secondary);
+        border-bottom: 3px solid var(--color-secondary);
+    }
+
+    #main .solutions-img::before {
+        left: 1px;
+        top: 1px;
+    }
+
+    #main .solutions-img::after {
+        right: 1px;
+        bottom: 1px;
+    }
 }
