@@ -59,8 +59,8 @@
     --color-default-rgb: 33, 37, 41;
     --color-primary: #e32636;
     --color-primary-rgb: 232, 69, 69;
-    --color-secondary:#a8a9b4;
-    --color-secondary-rgb:168, 169, 180;
+    --color-secondary: #a8a9b4;
+    --color-secondary-rgb: 168, 169, 180;
     --color-tertiary: #cda45e;
     --color-tertiary-rgb: 205, 164, 94;
     --color-inverse: #ffffff;
@@ -83,9 +83,10 @@
 
 /* Global Z-Indices */
 :root {
-    --z-default: 10;
-    --z-special-case: 20;
-    --z-preloader: 30;
+    --z-1: 10;
+    --z-2: 20;
+    --z-3: 30;
+    --z-special-case: 50;
 
 }
 
@@ -142,7 +143,7 @@ html {
     opacity: 0;
     right: 15px;
     bottom: 15px;
-    z-index: var(--z-special-case);
+    z-index: var(--z-3);
     background-color: var(--color-primary);
     width: 40px;
     height: 40px;
@@ -214,7 +215,7 @@ h6 {
     left: 0;
     width: 300px;
     transition: all ease-in-out 0.5s;
-    z-index: var(--z-special-case);
+    z-index: var(--z-2);
     transition: all 0.5s;
     padding: 0 15px;
     background: rgba(var(--color-background-inverse-rgb), 1);
@@ -323,7 +324,7 @@ h6 {
     margin-left: 300px;
     width: calc(100% - 300px);
     position: relative;
-    z-index: var(--z-default);
+    z-index: var(--z-1);
 }
 
 #topbar .social-links a {
@@ -360,7 +361,7 @@ h6 {
     transition: all 0.5s;
     height: 100px;
     position: sticky;
-    z-index: var(--z-default);
+    z-index: var(--z-1);
     top: 0;
     background: rgba(var(--color-background-inverse-rgb), 0.4);
 }
@@ -426,22 +427,22 @@ h6 {
     left: 0;
     bottom: 0;
     width: 300px;
-    z-index: 9999;
+    z-index: var(--z-2);
     background: #040b14;
     border-bottom-right-radius: 40px;
-  }
-  
-  #footer .copyright small {
+}
+
+#footer .copyright small {
     text-align: center;
     font-size: var(--font-size-sm);
-    position: relative;
-  }
-   
-  @media (max-width: 1199px) {
+}
+
+@media (max-width: 1199px) {
     #footer {
-      position: static;
-      width: auto;
-      padding-right: 20px 15px;
-      color: var(--color-secondary);
+        position: relative;
+        width: 100%;
+        padding-right: 20px 15px;
+        color: var(--color-secondary);
+        border-bottom-right-radius: 0;
     }
-  }
+}
