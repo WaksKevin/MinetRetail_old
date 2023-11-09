@@ -276,7 +276,7 @@ h6 {
     align-items: center;
     color: var(--color-secondary);
     padding: 5px 12px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     transition: 0.3s;
     font-size: var(--font-size-sm);
 }
@@ -406,8 +406,8 @@ h6 {
     position: relative;
     margin-left: 300px;
     width: calc(100% - 300px);
-    height: calc(100vh - 100px - 40px);
-    /* 100vh - header - top bar */
+    height: calc(100vh - 100px - 40px - 40px);
+    /* 100vh - header - top bar - footer*/
 }
 
 @media (max-width: 1199px) {
@@ -421,7 +421,8 @@ h6 {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-    padding: 15px;
+    height: 40px;
+    padding: 5px;
     color: var(--color-inverse);
     position: fixed;
     left: 0;
