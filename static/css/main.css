@@ -96,6 +96,51 @@ html {
     scroll-behavior: smooth;
 }
 
+:root {
+    --top-bar-h: 43px;
+    --header-h: 107px;
+    --footer-h: 50px;
+}
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+    color: var(--color-default);
+    font-family: var(--font-default);
+}
+
+body:before {
+    content: "";
+    background: rgba(var(--color-background-inverse-rgb), 0.5);
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--color-inverse);
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-inverse);
+    font-family: var(--font-primary);
+}
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -105,7 +150,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 9999;
+    z-index: var(--z-special-case);
     overflow: hidden;
     background: var(--color-background);
 }
@@ -167,45 +212,6 @@ html {
 }
 
 /*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
-body {
-    color: var(--color-default);
-    font-family: var(--font-default);
-}
-
-body:before {
-    content: "";
-    background: rgba(var(--color-background-inverse-rgb), 0.5);
-    position: fixed;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-a {
-    color: var(--color-primary);
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-a:hover {
-    color: var(--color-inverse);
-    text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: var(--color-inverse);
-    font-family: var(--font-primary);
-}
-
-/*--------------------------------------------------------------
 # Sidebar
 --------------------------------------------------------------*/
 #sidebar {
@@ -249,7 +255,7 @@ h6 {
 }
 
 #sidebar .page-profile h2 {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xl);
 }
 
 @media (max-width: 1199px) {
@@ -259,6 +265,11 @@ h6 {
 }
 
 /* Navigation Menu */
+
+.nav-menu {
+    margin-top: 15px;
+}
+
 .nav-menu * {
     margin: 0;
     padding: 0;
@@ -275,10 +286,10 @@ h6 {
     display: flex;
     align-items: center;
     color: var(--color-secondary);
-    padding: 5px 12px;
-    margin-bottom: 8px;
+    padding: 3px 12px;
+    margin-bottom: 5px;
     transition: 0.3s;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-lg);
 }
 
 .nav-menu a i,
@@ -298,7 +309,6 @@ h6 {
 .nav-menu .active:focus,
 .nav-menu li:hover>a {
     color: var(--color-inverse);
-    font-weight: bold;
 }
 
 .nav-menu a:hover i,
@@ -319,7 +329,7 @@ h6 {
 # Topbar
 --------------------------------------------------------------*/
 #topbar {
-    height: 40px;
+    height: var(--top-bar-h);
     transition: all 0.5s;
     margin-left: 300px;
     width: calc(100% - 300px);
@@ -328,15 +338,15 @@ h6 {
 }
 
 #topbar .social-links a {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
     display: flex;
     background: var(--color-primary);
     color: var(--color-inverse);
-    margin-right: 8px;
+    margin-right: 12px;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 33px;
+    height:32px;
     border-radius: 50%;
     transition: 0.3s;
 }
@@ -356,10 +366,10 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
+    height: var(--header-h);
     margin-left: 300px;
     width: calc(100% - 300px);
     transition: all 0.5s;
-    height: 100px;
     position: sticky;
     z-index: var(--z-1);
     top: 0;
@@ -406,8 +416,7 @@ h6 {
     position: relative;
     margin-left: 300px;
     width: calc(100% - 300px);
-    height: calc(100vh - 100px - 40px - 40px);
-    /* 100vh - header - top bar - footer*/
+    height: calc(100vh - var(--top-bar-h) - var(--header-h) - var(--footer-h));
 }
 
 @media (max-width: 1199px) {
@@ -421,7 +430,7 @@ h6 {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-    height: 40px;
+    height: var(--footer-h);
     padding: 5px;
     color: var(--color-inverse);
     position: fixed;
@@ -441,7 +450,8 @@ h6 {
 @media (max-width: 1199px) {
     #footer {
         position: relative;
-        width: 100%;
+        width: auto;
+        z-index: var(--z-1);
         padding-right: 20px 15px;
         color: var(--color-secondary);
         border-bottom-right-radius: 0;
