@@ -12,10 +12,35 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Font-Families */
+@font-face {
+    font-family: "Arial Black";
+    src: url("../fonts/Arial\ Black.ttf");
+}
+
+@font-face {
+    font-family: "preloslab-regular";
+    src: url("../fonts/PreloSlabW01-Medium\ Regular-d92e.otf");
+}
+
+@font-face {
+    font-family: "preloslab-medium-bold";
+    src: url("../fonts/preloslab-bold2_1.otf");
+}
+
+@font-face {
+    font-family: "Titillium-Semibold";
+    src: url("../fonts/Titillium-Semibold.otf");
+}
+
+@font-face {
+    font-family: "Titillium-Bold";
+    src: url("../fonts/Titillium-Bold.otf");
+}
+
 :root {
-    --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-primary: "Montserrat", sans-serif;
-    --font-secondary: "Lato", sans-serif;
+    --font-default: "preloslab-regular", "Titillium-Semibold", sans-serif;
+    --font-primary: "preloslab-medium-bold", "Titillium-Bold", sans-serif;
+    --font-secondary: "Arial Black", sans-serif;
 }
 
 /* Font-Sizes */
@@ -34,8 +59,10 @@
     --color-default-rgb: 33, 37, 41;
     --color-primary: #e32636;
     --color-primary-rgb: 232, 69, 69;
-    --color-secondary: #cda45e;
-    --color-secondary-rgb: 205, 164, 94;
+    --color-secondary:#a8a9b4;
+    --color-secondary-rgb:168, 169, 180;
+    --color-tertiary: #cda45e;
+    --color-tertiary-rgb: 205, 164, 94;
     --color-inverse: #ffffff;
     --color-inverse-rgb: 255, 255, 255;
     --color-background: #ffffff;
@@ -191,8 +218,8 @@ h6 {
     transition: all 0.5s;
     padding: 0 15px;
     background: rgba(var(--color-background-inverse-rgb), 1);
-    border-top-right-radius: 45px;
-    border-bottom-right-radius: 45px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -246,9 +273,9 @@ h6 {
 .nav-menu a:focus {
     display: flex;
     align-items: center;
-    color: #a8a9b4;
+    color: var(--color-secondary);
     padding: 5px 12px;
-    margin-bottom: 7px;
+    margin-bottom: 5px;
     transition: 0.3s;
     font-size: var(--font-size-sm);
 }
@@ -257,7 +284,7 @@ h6 {
 .nav-menu a:focus i {
     font-size: var(--font-size-xxl);
     padding-right: 8px;
-    color: #6f7180;
+    color: var(--color-tertiary);
 }
 
 .nav-menu a span,
@@ -281,6 +308,8 @@ h6 {
 }
 
 .nav-menu a:hover span,
+.nav-menu .active span,
+.nav-menu .active:focus span,
 .nav-menu li:hover>a span {
     background: var(--color-primary);
 }
@@ -390,3 +419,29 @@ h6 {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+#footer {
+    padding: 15px;
+    color: var(--color-inverse);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    z-index: 9999;
+    background: #040b14;
+    border-bottom-right-radius: 40px;
+  }
+  
+  #footer .copyright small {
+    text-align: center;
+    font-size: var(--font-size-sm);
+    position: relative;
+  }
+   
+  @media (max-width: 1199px) {
+    #footer {
+      position: static;
+      width: auto;
+      padding-right: 20px 15px;
+      color: var(--color-secondary);
+    }
+  }
