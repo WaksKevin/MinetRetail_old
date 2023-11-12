@@ -10,10 +10,6 @@ body {
 /*--------------------------------------------------------------
 # Main
 --------------------------------------------------------------*/
-#main{    
-    font-size: var(--font-size-lg);
-}
-
 #main .solutions-img {
     display: flex;
     flex-direction: column;
@@ -21,11 +17,19 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
+    min-height: 190px;
     width: 100%;
     background: rgba(var(--color-background-inverse-rgb), 0.7);
     border: 4px solid rgba(var(--color-inverse-rgb), 0.2);
     position: relative;
     transition: 0.5s;
+}
+
+@media (min-width: 1200px) {
+    #main .solutions-img {
+        min-height: 400px;
+        min-width: 200px;
+    }
 }
 
 #main .solutions-img::before {
@@ -34,7 +38,6 @@ body {
     top: 12px;
     width: 30px;
     height: 30px;
-    z-index: var(--z-1);
     content: "";
     border-left: 5px solid var(--color-tertiary);
     border-top: 5px solid var(--color-tertiary);
@@ -47,7 +50,6 @@ body {
     bottom: 12px;
     width: 30px;
     height: 30px;
-    z-index: var(--z-1);
     content: "";
     border-right: 5px solid var(--color-tertiary);
     border-bottom: 5px solid var(--color-tertiary);
@@ -151,30 +153,12 @@ body {
     }
 
     #main .solutions-img::before {
-        left: 5px;
-        top: 5px;
-        width: 10px;
-        height: 10px;
-        border-left: 3px solid var(--color-tertiary);
-        border-top: 3px solid var(--color-tertiary);
+        width: 21px;
+        height: 21px;
     }
 
     #main .solutions-img::after {
-        right: 5px;
-        bottom: 5px;
-        width: 10px;
-        height: 10px;
-        border-right: 3px solid var(--color-tertiary);
-        border-bottom: 3px solid var(--color-tertiary);
-    }
-
-    #main .solutions-img::before {
-        left: 1px;
-        top: 1px;
-    }
-
-    #main .solutions-img::after {
-        right: 1px;
-        bottom: 1px;
+        width: 21px;
+        height: 21px;
     }
 }
