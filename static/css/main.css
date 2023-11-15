@@ -99,22 +99,15 @@ html {
     scroll-behavior: smooth;
 }
 
-:root {
-    --top-bar-h: 43px;
-    --header-h: 107px;
-    --footer-h: 43px;
-}
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
     color: var(--color-default);
     font-family: var(--font-primary);
-    height: 100%;
 }
 
-body:before {
+main:before {
     content: "";
     background: rgba(var(--color-background-inverse-rgb), 0.5);
     position: fixed;
@@ -143,6 +136,7 @@ h5,
 h6 {
     color: var(--color-inverse);
     font-family: var(--font-primary-bold);
+    margin-bottom: 0;
 }
 
 #topbar,
@@ -248,9 +242,7 @@ h6 {
     z-index: var(--z-4);
     transition: all 0.5s;
     padding: 0 15px;
-    background: rgba(var(--color-background-inverse-rgb), 0.9);
-    /* border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px; */
+    background: var(--color-background-inverse);
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -275,38 +267,44 @@ h6 {
 #sidebar .page-profile hr {
     border: none;
     border-top: 3px solid var(--color-inverse);
-    width: 90%;
+    width: 80%;
     opacity: 1;
     margin: 12px auto;
 }
 
-#sidebar .page-profile h2 {
+#sidebar h2 {
     font-family: var(--font-primary);
     font-size: var(--font-size-md);
 }
 
-#sidebar .motto {
-    color: rgba(var(--color-inverse-rgb), 0.7);
-    font-size: var(--font-size-sm);
-    position: absolute;
-    bottom: 21px;
-}
+#sidebar .social-links a {
+    font-size: var(--font-size-md);
+    background: #212431;
+    color: var(--color-inverse);
+    padding: 8px;
+    margin-right: 7px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    transition: 0.3s;
+  }
+  
+  #sidebar .social-links a:hover {
+    background: var(--color-nav-hover);
+    color: var(--color-inverse);
+    text-decoration: none;
+  }
 
 /* Navigation Menu */
-.nav-menu {
-    margin-top: 18px;
-}
 
-.nav-menu * {
-    margin: 0;
-    padding: 0;
+.nav-menu ul {
     list-style: none;
 }
 
 .nav-menu>ul>li {
-    position: relative;
+    /* position: relative; */
     white-space: nowrap;
-}
+  }
 
 .nav-menu a,
 .nav-menu a:focus {
@@ -314,15 +312,14 @@ h6 {
     align-items: center;
     color: var(--color-secondary);
     padding: 3px 8px 3px 12px;
-    margin-bottom: 5px;
     transition: 0.3s;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
 }
 
 .nav-menu a i,
 .nav-menu a:focus i {
     font-size: var(--font-size-xxl);
-    padding-right: 8px;
+    margin-right: 8px;
     color: var(--color-tertiary);
 }
 
@@ -357,7 +354,7 @@ h6 {
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 350px) {
     #sidebar {
         width: 210px;
         left: -210px;
@@ -373,35 +370,40 @@ h6 {
 # Topbar
 --------------------------------------------------------------*/
 #topbar {
-    height: var(--top-bar-h);
     transition: all 0.5s;
+    position: sticky;
+    top: 0;
+    height: 43px;
 }
 
-#topbar .social-links a {
-    font-size: var(--font-size-md);
-    display: flex;
-    background: var(--color-primary);
-    color: var(--color-inverse);
-    margin-right: 12px;
-    justify-content: center;
-    align-items: center;
-    width: 33px;
-    height: 32px;
-    border-radius: 50%;
+#topbar .search-form .input-group{
+    max-width: 200px;
+    height: 30px;
+}
+
+#topbar .search-form input{
+    font-size: var(--font-size-sm);
+    
+}
+
+#topbar .search-form a{
     transition: 0.3s;
 }
 
-#topbar .social-links a:hover {
-    background-color: var(--color-background-inverse);
+#topbar .search-form a:hover{
+    background-color: #040b14;
+}
+
+#topbar .search-form a:hover i{
+    color: var(--color-inverse);
 }
 
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 #header {
-    height: var(--header-h);
     position: sticky;
-    top: 0;
+    top: 43px;
     z-index: var(--z-1);
     background: rgba(0, 0, 0, 0.4);
     transition: all 0.5s;
@@ -438,14 +440,12 @@ h6 {
 --------------------------------------------------------------*/
 #main {
     font-size: var(--font-size-md);
-    /* min-height: calc(100vh - var(--top-bar-h) - var(--header-h) - var(--footer-h)); */
 }
 
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 #footer {
-    height: var(--footer-h);
     color: rgba(var(--color-inverse-rgb), 0.7);
 }
 
