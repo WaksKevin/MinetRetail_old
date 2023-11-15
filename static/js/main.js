@@ -1,5 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     "use strict";
+    /**
+         * Preloader
+         */
+    const preloader = document.querySelector('#preloader');
+    if (preloader) {
+        window.addEventListener('load', () => {
+            preloader.remove();
+        });
+    }
 
     /**
      * Scroll top button
@@ -23,14 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('scroll', toggleScrollTop);
 
     /**
-     * Preloader
+     * Top Bar and Header on Scroll
      */
-    const preloader = document.querySelector('#preloader');
-    if (preloader) {
-        window.addEventListener('load', () => {
-            preloader.remove();
-        });
+    const header = document.querySelector("#header");
+
+    function toggleHeaderOnScroll() {
+        if (header) {
+            window.scrollY > 40 ? header.classList.add("header-onscroll") : header.classList.remove("header-onscroll");
+        }
     }
+
+    document.addEventListener('scroll', toggleHeaderOnScroll);
 
     /**
      * Mobile nav toggle

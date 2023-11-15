@@ -94,20 +94,23 @@
 }
 
 /* Smooth scroll */
-:root,
-html {
+:root {
     scroll-behavior: smooth;
 }
 
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+html {
+    height: 100%;
+}
+
 body {
     color: var(--color-default);
     font-family: var(--font-primary);
 }
 
-main:before {
+body:before {
     content: "";
     background: rgba(var(--color-background-inverse-rgb), 0.5);
     position: fixed;
@@ -137,26 +140,6 @@ h6 {
     color: var(--color-inverse);
     font-family: var(--font-primary-bold);
     margin-bottom: 0;
-}
-
-#topbar,
-#header,
-#main,
-#footer {
-    position: relative;
-    margin-left: 300px;
-    width: calc(100% - 300px);
-}
-
-@media (max-width: 1199.98px) {
-
-    #topbar,
-    #header,
-    #main,
-    #footer {
-        margin-left: 0;
-        width: 100%;
-    }
 }
 
 /*--------------------------------------------------------------
@@ -202,9 +185,9 @@ h6 {
 --------------------------------------------------------------*/
 .scroll-top {
     position: fixed;
+    right: 15px;
     visibility: hidden;
     opacity: 0;
-    right: 15px;
     bottom: 15px;
     z-index: var(--z-3);
     background-color: var(--color-primary);
@@ -234,14 +217,15 @@ h6 {
 --------------------------------------------------------------*/
 #sidebar {
     position: fixed;
-    top: 0;
-    bottom: 0;
     left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 15px;
     width: 300px;
     transition: all ease-in-out 0.5s;
     z-index: var(--z-4);
     transition: all 0.5s;
-    padding: 0 15px;
     background: var(--color-background-inverse);
     overflow-y: auto;
     overflow-x: hidden;
@@ -287,13 +271,13 @@ h6 {
     width: 35px;
     height: 35px;
     transition: 0.3s;
-  }
-  
-  #sidebar .social-links a:hover {
+}
+
+#sidebar .social-links a:hover {
     background: var(--color-nav-hover);
     color: var(--color-inverse);
     text-decoration: none;
-  }
+}
 
 /* Navigation Menu */
 
@@ -304,7 +288,7 @@ h6 {
 .nav-menu>ul>li {
     /* position: relative; */
     white-space: nowrap;
-  }
+}
 
 .nav-menu a,
 .nav-menu a:focus {
@@ -367,34 +351,45 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+#main {
+    margin-left: 300px;
+    width: calc(100% - 300px);
+}
+
+@media (max-width: 1199.98px) {
+    #main {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/*--------------------------------------------------------------
 # Topbar
 --------------------------------------------------------------*/
 #topbar {
     transition: all 0.5s;
-    position: sticky;
-    top: 0;
-    height: 43px;
 }
 
-#topbar .search-form .input-group{
+#topbar .search-form .input-group {
     max-width: 200px;
     height: 30px;
 }
 
-#topbar .search-form input{
+#topbar .search-form input {
     font-size: var(--font-size-sm);
-    
 }
 
-#topbar .search-form a{
+#topbar .search-form button {
     transition: 0.3s;
 }
 
-#topbar .search-form a:hover{
+#topbar .search-form button:hover {
     background-color: #040b14;
 }
 
-#topbar .search-form a:hover i{
+#topbar .search-form button:hover i {
     color: var(--color-inverse);
 }
 
@@ -403,10 +398,14 @@ h6 {
 --------------------------------------------------------------*/
 #header {
     position: sticky;
-    top: 43px;
+    top: 0;
     z-index: var(--z-1);
     background: rgba(0, 0, 0, 0.4);
     transition: all 0.5s;
+}
+
+.header-onscroll {
+    background: rgba(0, 0, 0, 0.8) !important;
 }
 
 /* Mobile Navigation */
@@ -436,9 +435,9 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Main
+# Content
 --------------------------------------------------------------*/
-#main {
+#content {
     font-size: var(--font-size-md);
 }
 
@@ -447,6 +446,8 @@ h6 {
 --------------------------------------------------------------*/
 #footer {
     color: rgba(var(--color-inverse-rgb), 0.7);
+    /* position: relative;
+    bottom: 30px; */
 }
 
 #footer small {

@@ -8,9 +8,9 @@ body {
 }
 
 /*--------------------------------------------------------------
-# Main
+# index
 --------------------------------------------------------------*/
-#main .solutions-img {
+#content .solutions-img {
     display: flex;
     flex-direction: column;
     padding: 30px 0;
@@ -26,13 +26,13 @@ body {
 }
 
 @media (min-width: 1200px) {
-    #main .solutions-img {
+    #content .solutions-img {
         min-height: 400px;
         min-width: 200px;
     }
 }
 
-#main .solutions-img::before {
+#content .solutions-img::before {
     position: absolute;
     left: 12px;
     top: 12px;
@@ -44,7 +44,7 @@ body {
     transition: 0.5s;
 }
 
-#main .solutions-img::after {
+#content .solutions-img::after {
     position: absolute;
     right: 12px;
     bottom: 12px;
@@ -56,108 +56,108 @@ body {
     transition: 0.5s;
 }
 
-#main .solutions-img #individual-solutions {
+#content .solutions-img #individual-solutions {
     background: url("../img/home/home-main-1.png") center;
     transition: 0.4s;
 }
 
-#main .solutions-img #business-solutions {
+#content .solutions-img #business-solutions {
     background: url("../img/home/home-main-2.png") center;
     transition: 0.4s;
 }
 
-#main .solutions-img #corporate-product {
+#content .solutions-img #corporate-product {
     background: url("../img/home/home-main-3.png") center;
     transition: 0.4s;
 }
 
-#main .solutions-img #teachers-medical-scheme-portal {
+#content .solutions-img #teachers-medical-scheme-portal {
     background: url("../img/home/home-main-4.png") center;
     transition: 0.4s;
 }
 
-#main .solutions-img:hover {
+#content .solutions-img:hover {
     transform: scale(1.03);
     background: rgba(var(--color-background-inverse-rgb), 0.9);
 }
 
-#main .solutions-img:hover::before {
+#content .solutions-img:hover::before {
     left: 5px;
     top: 5px;
 }
 
-#main .solutions-img:hover::after {
+#content .solutions-img:hover::after {
     right: 5px;
     bottom: 5px;
 }
 
-#main .solutions-img:hover {
+#content .solutions-img:hover {
     transform: scale(1.03);
 }
 
-#main .solutions-img:hover #individual-solutions {
+#content .solutions-img:hover #individual-solutions {
     background: url("../img/home/home-main-1-hover.png") center;
 }
 
-#main .solutions-img:hover #business-solutions {
+#content .solutions-img:hover #business-solutions {
     background: url("../img/home/home-main-2-hover.png") center;
 }
 
-#main .solutions-img:hover #corporate-product {
+#content .solutions-img:hover #corporate-product {
     background: url("../img/home/home-main-3-hover.png") center;
 }
 
-#main .solutions-img:hover #teachers-medical-scheme-portal {
+#content .solutions-img:hover #teachers-medical-scheme-portal {
     background: url("../img/home/home-main-4-hover.png") center;
 }
 
-#main .solutions-img #individual-solutions,
-#main .solutions-img #business-solutions,
-#main .solutions-img #corporate-product,
-#main .solutions-img #teachers-medical-scheme-portal {
+#content .solutions-img #individual-solutions,
+#content .solutions-img #business-solutions,
+#content .solutions-img #corporate-product,
+#content .solutions-img #teachers-medical-scheme-portal {
     width: 100%;
     height: 70%;
 }
 
-#main .solutions-img #individual-solutions,
-#main .solutions-img #business-solutions,
-#main .solutions-img #corporate-product,
-#main .solutions-img #teachers-medical-scheme-portal,
-#main .solutions-img:hover #individual-solutions,
-#main .solutions-img:hover #business-solutions,
-#main .solutions-img:hover #corporate-product,
-#main .solutions-img:hover #teachers-medical-scheme-portal {
+#content .solutions-img #individual-solutions,
+#content .solutions-img #business-solutions,
+#content .solutions-img #corporate-product,
+#content .solutions-img #teachers-medical-scheme-portal,
+#content .solutions-img:hover #individual-solutions,
+#content .solutions-img:hover #business-solutions,
+#content .solutions-img:hover #corporate-product,
+#content .solutions-img:hover #teachers-medical-scheme-portal {
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 @media (max-width: 600px) {
-    #main {
+    #content {
         font-size: var(--font-size-sm);
     }
 
-    #main .solutions-img::before {
+    #content .solutions-img::before {
         left: 10px;
         top: 10px;
     }
 
-    #main .solutions-img::after {
+    #content .solutions-img::after {
         right: 10px;
         bottom: 10px;
     }
 }
 
 @media (max-width: 400px) {
-    #main {
+    #content {
         font-size: var(--font-size-xs);
     }
 
-    #main .solutions-img::before {
+    #content .solutions-img::before {
         width: 21px;
         height: 21px;
     }
 
-    #main .solutions-img::after {
+    #content .solutions-img::after {
         width: 21px;
         height: 21px;
     }
