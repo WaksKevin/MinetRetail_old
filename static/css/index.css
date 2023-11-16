@@ -2,9 +2,10 @@
 # Body
 --------------------------------------------------------------*/
 body {
-    background: url("../img/home/home-bg.png") 40% top;
+    background: url("../img/home/main/bg.png") 40% top;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed;   
+    transition: background 1.5s ease-in-out;
 }
 
 /*--------------------------------------------------------------
@@ -50,22 +51,22 @@ body {
 }
 
 #content .solutions-img #individual-solutions {
-    background: url("../img/home/home-main-1.png") center;
+    background: url("../img/home/main/solutions-1.png") center;
     transition: 0.4s;
 }
 
 #content .solutions-img #business-solutions {
-    background: url("../img/home/home-main-2.png") center;
+    background: url("../img/home/main/solutions-2.png") center;
     transition: 0.4s;
 }
 
 #content .solutions-img #corporate-product {
-    background: url("../img/home/home-main-3.png") center;
+    background: url("../img/home/main/solutions-3.png") center;
     transition: 0.4s;
 }
 
 #content .solutions-img #teachers-medical-scheme-portal {
-    background: url("../img/home/home-main-4.png") center;
+    background: url("../img/home/main/solutions-4.png") center;
     transition: 0.4s;
 }
 
@@ -89,19 +90,19 @@ body {
 }
 
 #content .solutions-img:hover #individual-solutions {
-    background: url("../img/home/home-main-1-hover.png") center;
+    background: url("../img/home/main/solutions-1-hover.png") center;
 }
 
 #content .solutions-img:hover #business-solutions {
-    background: url("../img/home/home-main-2-hover.png") center;
+    background: url("../img/home/main/solutions-2-hover.png") center;
 }
 
 #content .solutions-img:hover #corporate-product {
-    background: url("../img/home/home-main-3-hover.png") center;
+    background: url("../img/home/main/solutions-3-hover.png") center;
 }
 
 #content .solutions-img:hover #teachers-medical-scheme-portal {
-    background: url("../img/home/home-main-4-hover.png") center;
+    background: url("../img/home/main/solutions-4-hover.png") center;
 }
 
 #content .solutions-img #individual-solutions,

@@ -35,18 +35,19 @@
     <link rel="stylesheet" href="static/css/index.css">
     <!-- Template JS -->
     <script src="static/js/main.js" defer></script>
+    <script src="static/js/index.js" defer></script>
 </head>
 
 <body class="h-100">
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="d-flex flex-column align-items-center pt-4" data-aos="slide-right">
         <div class="page-profile py-2">
-            <a class="d-flex justify-content-center align-items-center" href="index.html">
+            <div class="d-flex justify-content-center align-items-center">
                 <div class="page-profile-logo flex-shrink-1">
-                    <img src="static/img/home/home-sidebar.png" alt="" class="img-fluid">
+                    <img src="static/img/home/main/sidebar-profile.png" alt="" class="img-fluid">
                 </div>
                 <h1 class="pt-2 ms-3 text-uppercase">Home</h1>
-            </a>
+            </div>
             <hr />
             <h2 class="text-center">Welcome to Minet Insurance Brokers Solutions</h2>
         </div>
@@ -69,12 +70,14 @@
                 </li>
                 <li class="flex-grow-1">
                     <a href="" class="nav-link">
-                        <i class="bi bi-shield-lock"></i> <span class="rounded ms-1 py-2 px-3">Privacy Policy</span>
+                        <i class="bi bi-shield-lock"></i> <span class="rounded ms-1 py-2 px-3">Privacy
+                            Policy</span>
                     </a>
                 </li>
                 <li class="flex-grow-1">
                     <a href="https://www.minet.com/kenya/about-minet/" target="_blank" class="nav-link">
-                        <i class="bi bi-info-circle"></i> <span class="rounded ms-1 py-2 px-3">About Us</span>
+                        <i class="bi bi-info-circle"></i> <span class="rounded ms-1 py-2 px-3">About
+                            Us</span>
                     </a>
                 </li>
                 <li class="flex-grow-1">
@@ -84,7 +87,8 @@
                 </li>
                 <li class="flex-grow-1">
                     <a href="" class="nav-link">
-                        <i class="bi bi-file-earmark-person"></i> <span class="rounded ms-1 py-2 px-3">Media /
+                        <i class="bi bi-file-earmark-person"></i> <span class="rounded ms-1 py-2 px-3">Media
+                            /
                             Contacts</span>
                     </a>
                 </li>
@@ -143,28 +147,32 @@
         <section id="content"
             class="flex-grow-1 container-fluid p-5 text-center d-flex justify-content-center align-items-center">
             <div class="row g-4 w-100">
-                <div class="col-12 col-sm-6 col-xl-3" data-aos="fade-up" data-aos-delay="100">
-                    <a class="solutions-img h-100 position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
-                        href="">
+                <div class="col-12 col-sm-6 col-xl-3" data-aos="fade-up" data-aos-delay="200">
+                    <a id="individual-solutions-link"
+                        class="solutions-img h-100 position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
+                        hx-get="templates/individual-solutions.html" hx-trigger="click" hx-target="#content"
+                        hx-swap="innerHTML">
                         <div id="individual-solutions"></div>
                         <div>Individual Solutions</div>
                     </a>
                 </div>
-                <div class="col-12 col-sm-6 col-xl-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-12 col-sm-6 col-xl-3" data-aos="fade-up" data-aos-delay="400">
                     <a class="solutions-img h-100 position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
-                        href="">
+                        href="https://retail.minet.co.ke/biznasure/" target="_blank">
                         <div id="business-solutions" class="flex-fill-0"></div>
                         <div>Business Solutions</div>
                     </a>
                 </div>
-                <div class="col-12 col-sm-6 col-xl-3" data-aos="fade-up" data-aos-delay="300">
-                    <a class="solutions-img h-100 position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
-                        href="">
+                <div class="col-12 col-sm-6 col-xl-3" data-aos="fade-up" data-aos-delay="600">
+                    <a id="corporate-product-link"
+                        class="solutions-img h-100 position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
+                        hx-get="templates/individual-solutions.html" hx-trigger="click" hx-target="#content"
+                        hx-swap="innerHTML">
                         <div id="corporate-product"></div>
                         <div>Corporate Product</div>
                     </a>
                 </div>
-                <div class="col-12 col-sm-6 col-xl-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-12 col-sm-6 col-xl-3" data-aos="fade-up" data-aos-delay="800">
                     <a class="solutions-img h-100 position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
                         href="https://collaborationkenya.minet.com/MinetKe/tsc" target="_blank">
                         <div id="teachers-medical-scheme-portal"></div>
@@ -189,5 +197,7 @@
     <!-- Preloader -->
     <div id="preloader"></div>
 </body>
+
+
 
 </html>

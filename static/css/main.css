@@ -236,13 +236,13 @@ h6 {
     width: 88%;
 }
 
-#sidebar .page-profile a {
+/* #sidebar .page-profile a {
     transition: 0.5s;
 }
 
 #sidebar .page-profile a:hover {
     transform: scale(1.03);
-}
+} */
 
 #sidebar .page-profile .page-profile-logo {
     width: 55px;
@@ -293,7 +293,7 @@ h6 {
     display: flex;
     align-items: center;
     color: var(--color-secondary);
-    padding: 3px 8px 3px 12px;
+    padding: 3px 12px 3px 8px;
     transition: 0.3s;
     font-size: var(--font-size-md);
 }
@@ -301,13 +301,13 @@ h6 {
 .nav-menu a i,
 .nav-menu a:focus i {
     font-size: var(--font-size-xxl);
-    margin-right: 8px;
+    margin-right: 12px;
     color: var(--color-tertiary);
 }
 
 .nav-menu a span,
 .nav-menu a:focus span {
-    width: 210px;
+    width: 190px;
 }
 
 .nav-menu a:hover,
@@ -344,7 +344,7 @@ h6 {
 
     .nav-menu a span,
     .nav-menu a:focus span {
-        width: 150px;
+        width: 100px;
     }
 }
 

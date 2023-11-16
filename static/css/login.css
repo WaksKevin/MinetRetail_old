@@ -2,7 +2,7 @@
 # Body
 --------------------------------------------------------------*/
 body {
-    background: url("../img/login/login-bg.png") 40% top;
+    background: url("../img/login/bg.png") 40% top;
     background-size: cover;
     background-attachment: fixed;
 }
