@@ -198,7 +198,7 @@ h6 {
 }
 
 .scroll-top i {
-    font-size: 24px;
+    font-size: var(--font-size-xxl);
     color: var(--color-inverse);
     line-height: 0;
 }
@@ -268,8 +268,8 @@ h6 {
     padding: 8px;
     margin-right: 7px;
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
+    width: 34px;
+    height: 34px;
     transition: 0.3s;
 }
 
@@ -295,7 +295,7 @@ h6 {
     color: var(--color-secondary);
     padding: 3px 12px 3px 8px;
     transition: 0.3s;
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-sm);
 }
 
 .nav-menu a i,
@@ -395,6 +395,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
+    font-size: var(--font-size-sm);
     position: sticky;
     top: 0;
     z-index: var(--z-1);
@@ -409,7 +410,7 @@ h6 {
 /* Mobile Navigation */
 .mobile-nav-toggle {
     border: 0;
-    font-size: 24px;
+    font-size: var(--font-size-xxl);
     transition: all 0.4s;
     outline: none !important;
     background-color: var(--color-primary);
@@ -435,14 +436,18 @@ h6 {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-#content {
-    font-size: var(--font-size-md);
+#index-content,
+#login-content,
+#individual-solutions-content {
+    font-size: var(--font-size-sm);
 }
 
 @media (max-width: 300px) {
-    #content {
+
+    #index-content,
+    #login-content,
+    #individual-solutions-content {
         padding: 0 !important;
-        font-size: var(--font-size-sm);
     }
 }
 
@@ -454,5 +459,5 @@ h6 {
 }
 
 #footer small {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
 }

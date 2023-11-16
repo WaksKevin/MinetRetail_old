@@ -22,20 +22,105 @@
     <!-- Favicons -->
     <link rel="icon" href="static/img/favicons/favicon.png" />
     <link rel="apple-touch-icon" href="static/img/favicons/apple-touch-icon.png" />
+
     <!-- Vendor CSS -->
     <link rel="stylesheet" href="static/vendor/bootstrap-icons@1.11.1/bootstrap-icons.min.css">
     <link rel="stylesheet" href="static/vendor/bootstrap@5.3.2/bootstrap.min.css">
     <link rel="stylesheet" href="static/vendor/aos@2.3.4/aos.css">
-    <!-- Vendor JS -->
-    <script src="static/vendor/bootstrap@5.3.2/bootstrap.bundle.min.js" defer></script>
-    <script src="static/vendor/aos@2.3.4/aos.js" defer></script>
-    <script src="static/vendor/htmx@1.9.7/htmx.min.js" defer></script>
+
     <!-- Template CSS -->
     <link rel="stylesheet" href="static/css/main.css">
     <link rel="stylesheet" href="static/css/login.css">
-    <!-- Template JS -->
-    <script src="static/js/main.js" defer></script>
-    <script src="static/js/login.js" defer></script>
+
+    <style>
+        /*--------------------------------------------------------------
+        # Body
+        --------------------------------------------------------------*/
+        body {
+            background: url("static/img/login/bg.png") 40% top;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /*--------------------------------------------------------------
+        # Content
+        --------------------------------------------------------------*/
+        #login-content .login-breadcrumbs img {
+            width: 70px;
+        }
+
+        #login-content .login-breadcrumbs .dashed {
+            border-top: 3px dashed var(--color-inverse);
+            position: relative;
+            top: 10px;
+        }
+
+        #login-content .login-form {
+            background: rgba(var(--color-background-inverse-rgb), 0.7);
+            border: 4px solid rgba(var(--color-inverse-rgb), 0.2);
+            position: relative;
+            transition: 0.5s;
+        }
+
+        #login-content .login-form::before {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            width: 30px;
+            height: 30px;
+            content: "";
+            border-left: 5px solid var(--color-tertiary);
+            border-top: 5px solid var(--color-tertiary);
+            transition: 0.5s;
+        }
+
+        #login-content .login-form::after {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            width: 30px;
+            height: 30px;
+            content: "";
+            border-right: 5px solid var(--color-tertiary);
+            border-bottom: 5px solid var(--color-tertiary);
+            transition: 0.5s
+        }
+
+        #login-content .login-form .recaptcha {
+            color: var(--color-inverse);
+            background: var(--color-background-inverse);
+        }
+
+        #login-content .login-form .recaptcha .form-check .form-check-input {
+            transform: scale(1.5);
+        }
+
+        #login-content .login-form .recaptcha img {
+            max-width: 35px;
+        }
+
+        #login-content .login-form .btns button,
+        #login-content .login-form .btns a {
+            background: rgba(var(--color-primary-rgb), 1);
+            color: var(--color-inverse);
+            transition: all 0.5s;
+        }
+
+        #login-content .login-form .btns button:hover,
+        #login-content .login-form .btns a:hover {
+            background: rgba(var(--color-background-inverse-rgb), 0.9);
+            color: var(--color-tertiary);
+        }
+
+        #login-content .login-form .d-sm-table .form-text {
+            font-size: var(--font-size-sm);
+            color: var(--color-inverse);
+        }
+
+        #login-content .login-form .d-sm-table .form-text a:hover {
+            color: var(--color-tertiary);
+        }
+    </style>
 </head>
 
 <body class="h-100">
@@ -140,8 +225,8 @@
                 </div>
             </div>
         </header>
-        <!-- ======= Content ======= -->
-        <section id="content"
+        <!-- ======= Login Content ======= -->
+        <section id="login-content"
             class="flex-grow-1 container-fluid p-5 d-flex justify-content-center align-items-center text-wrap">
             <div class="row gy-4 w-100">
                 <div class="col-12" data-aos="fade-in" data-aos-delay="600">
@@ -203,6 +288,43 @@
 
     <!-- Preloader -->
     <div id="preloader"></div>
+
+    <!-- Vendor JS -->
+    <script src="static/vendor/bootstrap@5.3.2/bootstrap.bundle.min.js"></script>
+    <script src="static/vendor/aos@2.3.4/aos.js"></script>
+    <script src="static/vendor/htmx@1.9.7/htmx.min.js"></script>
+
+    <!-- Template JS -->
+    <script src="static/js/main.js"></script>
+
+    <!-- Inline JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            "use strict";
+            /**
+             * Update Placeholder
+             */
+            // Define a function that adds or removes the placeholder attribute based on screen size
+            function updatePlaceholder() {
+                var usernameCellphoneInput = document.querySelector("#username-cellphone");
+                var passwordInput = document.querySelector("#password");
+
+                // Check the screen width
+                if (window.innerWidth < 576) {
+                    usernameCellphoneInput.removeAttribute("placeholder");
+                    passwordInput.removeAttribute("placeholder");
+                } else {
+                    usernameCellphoneInput.setAttribute("placeholder", "Username / Cell Phone");
+                    passwordInput.setAttribute("placeholder", "Password");
+                }
+            }
+            window.addEventListener("resize", updatePlaceholder);
+
+            // Call the updatePlaceholder function initially
+            updatePlaceholder();
+
+        });
+    </script>
 </body>
 
 </html>
