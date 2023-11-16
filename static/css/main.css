@@ -280,13 +280,11 @@ h6 {
 }
 
 /* Navigation Menu */
-
 .nav-menu ul {
     list-style: none;
 }
 
 .nav-menu>ul>li {
-    /* position: relative; */
     white-space: nowrap;
 }
 
@@ -386,7 +384,7 @@ h6 {
 }
 
 #topbar .search-form button:hover {
-    background-color: #040b14;
+    background-color: rgba(var(--color-primary-rgb), 0.8);
 }
 
 #topbar .search-form button:hover i {
@@ -441,13 +439,18 @@ h6 {
     font-size: var(--font-size-md);
 }
 
+@media (max-width: 300px) {
+    #content {
+        padding: 0 !important;
+        font-size: var(--font-size-sm);
+    }
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 #footer {
     color: rgba(var(--color-inverse-rgb), 0.7);
-    /* position: relative;
-    bottom: 30px; */
 }
 
 #footer small {
