@@ -13,13 +13,8 @@
 --------------------------------------------------------------*/
 /* Font-Families */
 @font-face {
-    font-family: "Arial Black";
-    src: url("../fonts/Arial\ Black.ttf");
-}
-
-@font-face {
-    font-family: "preloslab-regular";
-    src: url("../fonts/PreloSlabW01-Medium\ Regular-d92e.otf");
+    font-family: "preloslab-medium-regular";
+    src: url("../fonts/preloslab-book1.otf");
 }
 
 @font-face {
@@ -28,21 +23,14 @@
 }
 
 @font-face {
-    font-family: "Titillium-Semibold";
-    src: url("../fonts/Titillium-Semibold.otf");
-}
-
-@font-face {
-    font-family: "Titillium-Bold";
-    src: url("../fonts/Titillium-Bold.otf");
+    font-family: "Titillium-Regular";
+    src: url("../fonts/Titillium-Regular.otf");
 }
 
 :root {
-    --font-default: "Arial Black", sans-serif;
-    --font-primary: "preloslab-regular", sans-serif;
-    --font-primary-bold: "preloslab-medium-bold", sans-serif;
-    --font-secondary: "Titillium-Semibold", sans-serif;
-    --font-secondary-bold: "Titillium-Bold", sans-serif
+    --font-default: "Titillium-Regular", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-primary: "preloslab-medium-bold", sans-serif;
+    --font-secondary: "preloslab-medium-regular", sans-serif;
 }
 
 /* Font-Sizes */
@@ -101,13 +89,9 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-html {
-    height: 100%;
-}
-
 body {
     color: var(--color-default);
-    font-family: var(--font-primary);
+    font-family: var(--font-default);
 }
 
 body:before {
@@ -138,7 +122,7 @@ h4,
 h5,
 h6 {
     color: var(--color-inverse);
-    font-family: var(--font-primary-bold);
+    font-family: var(--font-primary);
     margin-bottom: 0;
 }
 
@@ -233,7 +217,7 @@ h6 {
 
 #sidebar .page-profile {
     background: var(--color-primary);
-    width: 88%;
+    width: 95%;
 }
 
 /* #sidebar .page-profile a {
@@ -256,9 +240,9 @@ h6 {
     margin: 12px auto;
 }
 
-#sidebar h2 {
+#sidebar p {
+    color: var(--color-inverse);
     font-family: var(--font-primary);
-    font-size: var(--font-size-md);
 }
 
 #sidebar .social-links a {
@@ -352,8 +336,15 @@ h6 {
 # Main
 --------------------------------------------------------------*/
 #main {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     margin-left: 300px;
     width: calc(100% - 300px);
+    transition: all ease-in-out 0.5s;
+    overflow-y: auto;
 }
 
 @media (max-width: 1199.98px) {
@@ -370,6 +361,10 @@ h6 {
     transition: all 0.5s;
 }
 
+#topbar .endorse {
+    max-width: 250px;
+}
+
 #topbar .search-form .input-group {
     max-width: 200px;
     height: 30px;
@@ -377,6 +372,14 @@ h6 {
 
 #topbar .search-form input {
     font-size: var(--font-size-sm);
+    background-color: var(--color-background);
+    color: var(--color-default);
+    border: 1px solid rgba(var(--color-default-rgb), 0.3);
+}
+
+#topbar .search-form input:focus {
+    box-shadow: none;
+    border-color: var(--color-primary);
 }
 
 #topbar .search-form button {
@@ -447,7 +450,7 @@ h6 {
     #index-content,
     #login-content,
     #individual-solutions-content {
-        padding: 0 !important;
+        padding: 0;
     }
 }
 
@@ -459,5 +462,5 @@ h6 {
 }
 
 #footer small {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
 }

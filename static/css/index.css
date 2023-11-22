@@ -1,0 +1,109 @@
+/*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
+body {
+    background: url("../img/home/main/bg.png") 40% top;
+    background-size: cover;
+    background-attachment: fixed;
+    /* transition: background 1.5s ease-in-out; */
+}
+
+/*--------------------------------------------------------------
+# Index-Content
+--------------------------------------------------------------*/
+#index-content {
+    padding: 3rem;
+}
+
+#index-content .solutions-img {
+    background: rgba(var(--color-background-inverse-rgb), 0.7);
+    border: 4px solid rgba(var(--color-inverse-rgb), 0.2);
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+}
+
+#index-content .solutions-img::before {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 30px;
+    height: 30px;
+    content: "";
+    border-left: 5px solid var(--color-tertiary);
+    border-top: 5px solid var(--color-tertiary);
+    transition: 0.5s;
+}
+
+#index-content .solutions-img::after {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    width: 30px;
+    height: 30px;
+    content: "";
+    border-right: 5px solid var(--color-tertiary);
+    border-bottom: 5px solid var(--color-tertiary);
+    transition: 0.5s;
+}
+
+#index-content .solutions-img .normalimg,
+#index-content .solutions-img .hoverimg {
+    transition: display 7.3s ease-in-out;
+}
+
+#index-content .solutions-img h2 {
+    font-size: var(--font-size-md);
+    color: var(--color-primary);
+}
+
+#index-content .solutions-img:hover {
+    transform: scale(1.03);
+    background: rgba(var(--color-background-inverse-rgb), 0.9);
+}
+
+#index-content .solutions-img:hover::before {
+    left: 5px;
+    top: 5px;
+}
+
+#index-content .solutions-img:hover::after {
+    right: 5px;
+    bottom: 5px;
+}
+
+#index-content .solutions-img:hover {
+    transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+    #index-content {
+        font-size: var(--font-size-sm);
+    }
+
+    #index-content .solutions-img::before {
+        left: 10px;
+        top: 10px;
+    }
+
+    #index-content .solutions-img::after {
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    #index-content {
+        font-size: var(--font-size-xs);
+    }
+
+    #index-content .solutions-img::before {
+        width: 21px;
+        height: 21px;
+    }
+
+    #index-content .solutions-img::after {
+        width: 21px;
+        height: 21px;
+    }
+}

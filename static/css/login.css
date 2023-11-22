@@ -1,0 +1,120 @@
+/*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
+body {
+    background: url("../img/login/bg.png") 40% top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+#login-content {
+    padding: 10px 8rem;
+}
+
+@media (max-width: 767.98px) {
+    #login-content {
+        padding: 10px 2rem;
+    }
+}
+
+#login-content .login-breadcrumbs img {
+    width: 70px;
+}
+
+#login-content .login-breadcrumbs .dashed {
+    border-top: 3px dashed var(--color-inverse);
+    position: relative;
+    top: 10px;
+}
+
+#login-content .login-form {
+    background: rgba(var(--color-background-inverse-rgb), 0.7);
+    border: 4px solid rgba(var(--color-inverse-rgb), 0.2);
+    transition: 0.5s;
+}
+
+#login-content .login-form input {
+    background-color: var(--color-background);
+    color: var(--color-default);
+    border: 1px solid rgba(var(--color-default-rgb), 0.3);
+    font-size: var(--font-size-sm);
+    border-radius: 4px;
+}
+
+#login-content .login-form input:focus {
+    box-shadow: none;
+    border-color: var(--color-primary);
+}
+
+#login-content .login-form::before {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 30px;
+    height: 30px;
+    content: "";
+    border-left: 5px solid var(--color-tertiary);
+    border-top: 5px solid var(--color-tertiary);
+    transition: 0.5s;
+}
+
+#login-content .login-form::after {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    width: 30px;
+    height: 30px;
+    content: "";
+    border-right: 5px solid var(--color-tertiary);
+    border-bottom: 5px solid var(--color-tertiary);
+    transition: 0.5s
+}
+
+
+
+#login-content .login-form .recaptcha {
+    color: var(--color-inverse);
+}
+
+#login-content .login-form .recaptcha .form-check-input {
+    transform: scale(1.5);
+}
+
+#login-content .login-form .recaptcha .form-check-input:focus {
+    box-shadow: none;
+    border-color: var(--color-primary);
+}
+
+#login-content .login-form .recaptcha .form-check-input:checked {
+    background-color: rgba(var(--color-primary-rgb), 0.8);
+    border-color: var(--color-primary);
+}
+
+#login-content .login-form .recaptcha img {
+    max-width: 30px;
+}
+
+#login-content .login-form .btns button,
+#login-content .login-form .btns a {
+    background: rgba(var(--color-primary-rgb), 1);
+    color: var(--color-inverse);
+    transition: all 0.5s;
+}
+
+#login-content .login-form .btns button:hover,
+#login-content .login-form .btns a:hover {
+    background: rgba(var(--color-background-inverse-rgb), 0.9);
+    color: var(--color-inverse);
+}
+
+#login-content .login-form .d-sm-table .form-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-inverse);
+}
+
+#login-content .login-form .d-sm-table .form-text a:hover {
+    color: var(--color-inverse);
+}
