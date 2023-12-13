@@ -5,7 +5,6 @@ from django.shortcuts import render
 
 def index(request):
     context = {
-        "page_id": "index",
         "index_active": "active",
     }
 
@@ -14,7 +13,6 @@ def index(request):
 
 def individual_solutions(request):
     context = {
-        "page_id": "individual-solutions",
         "individual_solutions_active": "active",
     }
 
@@ -23,8 +21,15 @@ def individual_solutions(request):
 
 def corporate_product(request):
     context = {
-        "page_id": "corporate-product",
         "corporate_product_active": "active",
     }
 
     return render(request, "home/corporate-product.html", context)
+
+
+def privacy_policy(request):
+    context = {
+        "privacy_policy_active": "active",
+    }
+
+    return render(request, "home/privacy-policy.html", context)

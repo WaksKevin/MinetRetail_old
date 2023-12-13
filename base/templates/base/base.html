@@ -11,8 +11,8 @@
         <meta property="og:site_name" content="Minet Kenya Retail">
         <meta property="og:type" content="website">
         <title>
+            Minet Kenya Ecommerce |
             {% block title %}
-                Minet Kenya Ecommerce |
             {% endblock title %}
         </title>
         <meta name="keywords"
@@ -24,19 +24,20 @@
         <link rel="icon" href="{% static 'favicon.ico' %}" />
         <link rel="apple-touch-icon" href="{% static 'apple-touch-icon.png' %}" />
         <!-- Manifest -->
+        <link rel="manifest" href="{% static 'manifest.webmanifest' %}" />
         <!-- Vendor CSS -->
         <link rel="stylesheet"
               href="{% static 'vendors/bootstrap-icons@1.11.1/bootstrap-icons.min.css' %}">
         <link rel="stylesheet"
               href="{% static 'vendors/bootstrap@5.3.2/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'vendors/aos@2.3.4/aos.css' %}">
-        <!-- Main CSS -->
+        <!-- Base CSS -->
         <link rel="stylesheet" href="{% static 'base/css/base.css' %}">
         <!-- Other app's CSS -->
         {% block style %}
         {% endblock style %}
     </head>
-    <body id="{{ page_id }}">
+    <body>
         <!-- ======= Sidebar ======= -->
         <aside id="sidebar"
                class="d-flex flex-column align-items-center pt-4"
@@ -61,7 +62,8 @@
                         </a>
                     </li>
                     <li class="flex-grow-1">
-                        <a href="" class="nav-link">
+                        <a href="{% url 'privacy-policy' %}"
+                           class="nav-link {{ privacy_policy_active }}">
                             <i class="bi bi-shield-lock"></i> <span class="rounded ms-1 py-2 px-3">Privacy
                             Policy</span>
                         </a>
@@ -106,7 +108,7 @@
             <section id="topbar" class="container-fluid py-2" data-aos="fade-in">
                 <div class="row">
                     <div class="col d-none d-sm-flex align-items-center">
-                        <img src="{% static 'base/img/logo/endorsement-logo-white-300x27.png' %}"
+                        <img src="{% static 'base/img/endorsement-logo-white-300x27.png' %}"
                              width=""
                              height=""
                              alt=""
@@ -131,7 +133,7 @@
                         <a href="https://www.minet.com/kenya/"
                            target="_blank"
                            class="d-block mt-1">
-                            <img src="{% static 'base/img/logo/logo-white-300x78.png' %}"
+                            <img src="{% static 'base/img/logo-white-300x78.png' %}"
                                  width=""
                                  height=""
                                  alt=""
@@ -151,7 +153,7 @@
             <footer id="footer" class="mt-auto pb-4 container-fluid">
                 <div class="row">
                     <div class="col d-flex justify-content-center align-items-center">
-                        <small class="fst-italic">© Minet Service Portal 2023</small>
+                        <small class="fst-italic">© Minet Service Portal</small>
                     </div>
                 </div>
             </footer>
@@ -165,8 +167,7 @@
         <!-- Vendor JS -->
         <script src="{% static 'vendors/bootstrap@5.3.2/bootstrap.bundle.min.js' %}"></script>
         <script src="{% static 'vendors/aos@2.3.4/aos.js' %}"></script>
-        <script src="{% static 'vendors/htmx@1.9.7/htmx.min.js' %}"></script>
-        <!-- Main JS -->
+        <!-- Base JS -->
         <script src="{% static 'base/js/base.js' %}"></script>
         <!-- Other app's Js -->
         {% block script %}

@@ -5,7 +5,6 @@ from django.shortcuts import render
 
 def login(request):
     context = {
-        "page_id" : "login",
         "login_active" : "active",
     }
 

@@ -1,9 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     "use strict";
+
+    /**
+    * Page ID
+    */
+    const page_id = document.querySelector("body");
+    if (window.location.pathname === "/") {
+        page_id.setAttribute("id", "index");
+    } else if (window.location.pathname === "/privacy-policy") {
+        page_id.setAttribute("id", "privacy-policy");
+    } else if (window.location.pathname === "/corporate-product") {
+        page_id.setAttribute("id", "corporate-product");
+    } else if (window.location.pathname === "/individual-solutions") {
+        page_id.setAttribute("id", "individual-solutions");
+    }
+
     /**
      * Solutions Images on Hover
      */
-
     const individual_solutions = document.querySelector(".solutions-img.individual-solutions");
     const corporate_product = document.querySelector(".solutions-img.corporate-product");
     const business_solutions = document.querySelector(".solutions-img.business-solutions");

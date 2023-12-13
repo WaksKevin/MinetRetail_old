@@ -57,6 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
 
     /**
+     * Footer Copyright
+     */
+    var today = new Date();
+    var year = today.getFullYear();
+    const copyright = document.querySelector("#footer small");
+    copyright.textContent += ` ${year}`;
+
+    /**
      * Animation on scroll function and init
      */
     function aosInit() {

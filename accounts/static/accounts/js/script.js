@@ -1,5 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+    /**
+     * Page ID
+     */
     "use strict";
+    const page_id = document.querySelector("body");
+
+    if (window.location.pathname === "/accounts/login") {
+        page_id.setAttribute("id", "login");
+    }
+
     /**
      * Update Placeholder
      */
