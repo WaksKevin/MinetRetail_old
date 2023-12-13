@@ -3,7 +3,10 @@
 {% block style %}
      <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
 {% endblock style %}
-{% block page-profile %}
+{% block title %}
+     Home
+{% endblock title %}
+{% block profile %}
      <div class="page-profile py-2">
           <div class="d-flex justify-content-center align-items-center">
                <div class="page-profile-logo flex-shrink-1">
@@ -18,7 +21,7 @@
           <hr />
           <p class="text-center fw-bold mb-0">Welcome to Minet Insurance Brokers Solutions</p>
      </div>
-{% endblock page-profile %}
+{% endblock profile %}
 {% block content %}
      <!-- ======= Index Content ======= -->
      <section id="index-content" class="flex-grow-1 container-fluid text-center">
@@ -26,12 +29,8 @@
                <div class="col-6 col-xl-3 d-flex justify-content-center align-items-center"
                     data-aos="fade-up"
                     data-aos-delay="200">
-                    <a id="individual-solutions"
-                       class="solutions-img position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
-                       hx-get="{% static 'home/html/individual-solutions.html' %}"
-                       hx-trigger="click"
-                       hx-target="#index-content"
-                       hx-swap="outerHTML">
+                    <a class="solutions-img individual-solutions position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
+                       href="{% url 'individual-solutions' %}">
                          <img src="{% static 'home/img/main/solutions-1.png' %}"
                               width=""
                               height=""
@@ -48,8 +47,7 @@
                <div class="col-6 col-xl-3 d-flex justify-content-center align-items-center"
                     data-aos="fade-up"
                     data-aos-delay="400">
-                    <a id="business-solutions"
-                       class="solutions-img position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
+                    <a class="solutions-img business-solutions position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
                        href="https://retail.minet.co.ke/biznasure/"
                        target="_blank">
                          <img src="{% static 'home/img/main/solutions-2.png' %}"
@@ -68,12 +66,8 @@
                <div class="col-6 col-xl-3 d-flex justify-content-center align-items-center"
                     data-aos="fade-up"
                     data-aos-delay="600">
-                    <a id="corporate-product"
-                       class="solutions-img position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
-                       hx-get="{% static 'home/html/individual-solutions.html' %}"
-                       hx-trigger="click"
-                       hx-target="#index-content"
-                       hx-swap="outerHTML">
+                    <a class="solutions-img corporate-product position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
+                       href="{% url 'corporate-product' %}">
                          <img src="{% static 'home/img/main/solutions-3.png' %}"
                               width=""
                               height=""
@@ -90,8 +84,7 @@
                <div class="col-6 col-xl-3 d-flex justify-content-center align-items-center"
                     data-aos="fade-up"
                     data-aos-delay="800">
-                    <a id="teachers-medical-scheme"
-                       class="solutions-img position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
+                    <a class="solutions-img teachers-medical-scheme position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
                        href="https://collaborationkenya.minet.com/MinetKe/tsc"
                        target="_blank">
                          <img src="{% static 'home/img/main/solutions-4.png' %}"

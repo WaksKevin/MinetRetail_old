@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------
 # Body
 --------------------------------------------------------------*/
-body {
+#login {
     background: url("../img/bg.png") 40% top;
     background-size: cover;
     background-attachment: fixed;

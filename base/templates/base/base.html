@@ -10,16 +10,20 @@
         <meta property="og:locale" content="en_US">
         <meta property="og:site_name" content="Minet Kenya Retail">
         <meta property="og:type" content="website">
-        <title>Retail - Minet Kenya</title>
+        <title>
+            {% block title %}
+                Minet Kenya Ecommerce |
+            {% endblock title %}
+        </title>
         <meta name="keywords"
               content="Minet, insurance, brokers, solutions, individual, SME, corporate, teacher, medical, scheme">
         <meta name="description"
               content="Minet is a leading insurance broker in Kenya that offers solutions for individuals, SMEs, corporates, and teachers. Minet provides medical schemes, life insurance, general insurance, and risk management services.">
         <meta name="theme-color" content="#e32636">
         <!-- Favicons -->
-        <link rel="icon" href="{% static 'base/img/favicons/favicon.png' %}" />
-        <link rel="apple-touch-icon"
-              href="{% static 'base/img/favicons/apple-touch-icon.png' %}" />
+        <link rel="icon" href="{% static 'favicon.ico' %}" />
+        <link rel="apple-touch-icon" href="{% static 'apple-touch-icon.png' %}" />
+        <!-- Manifest -->
         <!-- Vendor CSS -->
         <link rel="stylesheet"
               href="{% static 'vendors/bootstrap-icons@1.11.1/bootstrap-icons.min.css' %}">
@@ -32,13 +36,13 @@
         {% block style %}
         {% endblock style %}
     </head>
-    <body>
+    <body id="{{ page_id }}">
         <!-- ======= Sidebar ======= -->
         <aside id="sidebar"
                class="d-flex flex-column align-items-center pt-4"
                data-aos="slide-right">
-            {% block page-profile %}
-            {% endblock page-profile %}
+            {% block profile %}
+            {% endblock profile %}
             <nav class="nav-menu navbar flex-grow-1 py-5">
                 <ul class="h-100 d-flex flex-column">
                     <li class="flex-grow-1">

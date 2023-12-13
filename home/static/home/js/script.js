@@ -1,63 +1,14 @@
-"use strict";
-/**
- * Preload Images
- */
-const preloadImages = (urls) => {
-    return Promise.all(urls.map(url => {
-        return new Promise((resolve, reject) => {
-            const img = new Image();
-            img.onload = () => resolve(img);
-            img.onerror = reject;
-            img.src = url;
-        });
-    }));
-};
-
-const imageUrls = [
-    "static/home/img/individual-solutions/bg.png",
-    "static/home/img/corporate-product/bg.png"
-    // Add more image URLs as needed
-];
-
-const individual_solutions = document.querySelector("#individual-solutions");
-const corporate_product = document.querySelector("#corporate-product");
-const business_solutions = document.querySelector("#business-solutions");
-const teachers_medical_scheme = document.querySelector("#teachers-medical-scheme");
-
-preloadImages(imageUrls).then(() => {
-    /**
-     * Individual Solutions Background Swap
-     */
-    function individualSolutionsBackground(url) {
-        document.body.style.backgroundImage = "url('" + url + "')";
-    }
-
-    if (individual_solutions) {
-        individual_solutions.addEventListener("click", () => {
-            individualSolutionsBackground("static/home/img/individual-solutions/bg.png");
-        });
-    }
-
-    /**
-     * Corporate Product Background Swap
-     */
-    function corporateProductBackground(url) {
-        document.body.style.backgroundImage = "url('" + url + "')";
-    }
-
-    if (corporate_product) {
-        corporate_product.addEventListener("click", () => {
-            corporateProductBackground("static/home/img/corporate-product/bg.png");
-        });
-    }
-});
-
-
 document.addEventListener('DOMContentLoaded', () => {
     "use strict";
     /**
      * Solutions Images on Hover
      */
+
+    const individual_solutions = document.querySelector(".solutions-img.individual-solutions");
+    const corporate_product = document.querySelector(".solutions-img.corporate-product");
+    const business_solutions = document.querySelector(".solutions-img.business-solutions");
+    const teachers_medical_scheme = document.querySelector(".solutions-img.teachers-medical-scheme");
+
     function solutionsImgOnHover(solutions_link) {
         const normalImg = solutions_link.querySelector("img.normalimg");
         normalImg.classList.add("d-none");
@@ -89,4 +40,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
-

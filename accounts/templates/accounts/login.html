@@ -3,22 +3,25 @@
 {% block style %}
     <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
 {% endblock style %}
-{% block page-profile %}
-     <div class="page-profile py-2">
-          <div class="d-flex justify-content-center align-items-center">
-               <div class="page-profile-logo flex-shrink-1">
-                    <img src="{% static 'accounts/img/sidebar-profile.png' %}"
-                         width=""
-                         height=""
-                         alt=""
-                         class="img-fluid">
-               </div>
-               <h1 class="pt-2 ms-3 text-uppercase">Login</h1>
-          </div>
-          <hr />
-          <p class="text-center fw-bold mb-0">Welcome to Minet Insurance Brokers Solutions</p>
-     </div>
-{% endblock page-profile %}
+{% block title %}
+    Login
+{% endblock title %}
+{% block profile %}
+    <div class="page-profile py-2">
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="page-profile-logo flex-shrink-1">
+                <img src="{% static 'accounts/img/sidebar-profile.png' %}"
+                     width=""
+                     height=""
+                     alt=""
+                     class="img-fluid">
+            </div>
+            <h1 class="pt-2 ms-3 text-uppercase">Login</h1>
+        </div>
+        <hr />
+        <p class="text-center fw-bold mb-0">Welcome to Minet Insurance Brokers Solutions</p>
+    </div>
+{% endblock profile %}
 {% block content %}
     <!-- ======= Login Content ======= -->
     <section id="login-content"
