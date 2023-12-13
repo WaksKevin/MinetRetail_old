@@ -1,0 +1,89 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+{% endblock style %}
+{% block page-profile %}
+     <div class="page-profile py-2">
+          <div class="d-flex justify-content-center align-items-center">
+               <div class="page-profile-logo flex-shrink-1">
+                    <img src="{% static 'home/img/main/sidebar-profile.png' %}"
+                         width=""
+                         height=""
+                         alt=""
+                         class="img-fluid">
+               </div>
+               <h1 class="pt-2 ms-3 text-uppercase">Login</h1>
+          </div>
+          <hr />
+          <p class="text-center fw-bold mb-0">Welcome to Minet Insurance Brokers Solutions</p>
+     </div>
+{% endblock page-profile %}
+{% block content %}
+    <!-- ======= Login Content ======= -->
+    <section id="login-content"
+             class="flex-grow-1 container-fluid text-center text-wrap d-flex flex-column justify-content-center align-items-center">
+        <div class="login-breadcrumbs w-100 d-flex mb-4 justify-content-center align-items-center"
+             data-aos="fade-in"
+             data-aos-delay="600">
+            <img src="{% static 'login/img/login/ICONS-15.png' %}"
+                 width=""
+                 height=""
+                 alt=""
+                 class="img-fluid">
+            <div class="w-100 dashed"></div>
+        </div>
+        <form class="login-form position-relative w-100 row gy-3 p-4 needs-validation"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              novalidate>
+            <div class="col-12 error-message d-none text-danger bg-danger-subtle px-4 py-3">
+                Kindly fill/ check all required form fields.
+            </div>
+            <div class="col-12 form-floating">
+                <input type="text" class="form-control" id="username-cellphone" required>
+                <label for="username-cellphone" class="form-label ms-4">Username / Cell Phone</label>
+                <div class="invalid-feedback">Please provide your username or cellphone number.</div>
+            </div>
+            <div class="col-12 form-floating">
+                <input type="password" class="form-control" id="password" required>
+                <label for="password" class="form-label ms-4">Password</label>
+                <div class="invalid-feedback">Please enter your correct password.</div>
+            </div>
+            <div class="col-12 recaptcha px-5 py-1 d-flex justify-content-sm-between align-items-center">
+                <div class="form-check">
+                    <input class="form-check-input"
+                           type="checkbox"
+                           value=""
+                           id="recaptcha"
+                           required>
+                    <label class="form-check-label ms-4" for="recaptcha">I'm not a robot</label>
+                </div>
+                <div class="d-none d-sm-block">
+                    <img src="{% static 'login/img/login/recaptcha.png' %}"
+                         class="img-fluid"
+                         width=""
+                         height=""
+                         alt="recaptcha logo">
+                </div>
+            </div>
+            <div class="col-12 btns d-flex flex-column flex-sm-row justify-content-center align-items-center">
+                <button type="submit" class="btn w-100 text-uppercase mb-3 mb-sm-0">Login</button>
+                <a href="" class="btn text-uppercase w-100 ms-sm-4">Purchase Insurance</a>
+            </div>
+            <div class="col-12 d-sm-table text-center">
+                <div class="d-sm-table-row">
+                    <div class="d-sm-table-cell mb-2 mb-sm-0 border-end border-secondary">
+                        <span class="form-text">Not a member? <a href="">Sign up here</a></span>
+                    </div>
+                    <div class="d-sm-table-cell">
+                        <span class="form-text">Request <a href="">Password Reset</a></span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+{% endblock content %}
+{% block script %}
+    <script src="{% static 'accounts/js/script.js' %}"></script>
+{% endblock script %}

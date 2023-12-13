@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -16,47 +17,37 @@
               content="Minet is a leading insurance broker in Kenya that offers solutions for individuals, SMEs, corporates, and teachers. Minet provides medical schemes, life insurance, general insurance, and risk management services.">
         <meta name="theme-color" content="#e32636">
         <!-- Favicons -->
-        <link rel="icon" href="static/img/favicons/favicon.png" />
+        <link rel="icon" href="{% static 'base/img/favicons/favicon.png' %}" />
         <link rel="apple-touch-icon"
-              href="static/img/favicons/apple-touch-icon.png" />
+              href="{% static 'base/img/favicons/apple-touch-icon.png' %}" />
         <!-- Vendor CSS -->
         <link rel="stylesheet"
-              href="static/vendor/bootstrap-icons@1.11.1/bootstrap-icons.min.css">
+              href="{% static 'vendors/bootstrap-icons@1.11.1/bootstrap-icons.min.css' %}">
         <link rel="stylesheet"
-              href="static/vendor/bootstrap@5.3.2/bootstrap.min.css">
-        <link rel="stylesheet" href="static/vendor/aos@2.3.4/aos.css">
-        <!-- Template CSS -->
-        <link rel="stylesheet" href="static/css/main.css">
-        <link rel="stylesheet" href="static/css/index.css">
+              href="{% static 'vendors/bootstrap@5.3.2/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendors/aos@2.3.4/aos.css' %}">
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="{% static 'base/css/base.css' %}">
+        <!-- Other app's CSS -->
+        {% block style %}
+        {% endblock style %}
     </head>
     <body>
         <!-- ======= Sidebar ======= -->
         <aside id="sidebar"
                class="d-flex flex-column align-items-center pt-4"
                data-aos="slide-right">
-            <div class="page-profile py-2">
-                <div class="d-flex justify-content-center align-items-center">
-                    <div class="page-profile-logo flex-shrink-1">
-                        <img src="static/img/home/main/sidebar-profile.png"
-                             width=""
-                             height=""
-                             alt=""
-                             class="img-fluid">
-                    </div>
-                    <h1 class="pt-2 ms-3 text-uppercase">Home</h1>
-                </div>
-                <hr />
-                <p class="text-center fw-bold mb-0">Welcome to Minet Insurance Brokers Solutions</p>
-            </div>
+            {% block page-profile %}
+            {% endblock page-profile %}
             <nav class="nav-menu navbar flex-grow-1 py-5">
                 <ul class="h-100 d-flex flex-column">
                     <li class="flex-grow-1">
-                        <a href="login.html" class="nav-link">
+                        <a href="{% url 'login' %}" class="nav-link {{ login_active }}">
                             <i class="bi bi-box-arrow-in-right"></i> <span class="rounded ms-1 py-2 px-3">Login</span>
                         </a>
                     </li>
                     <li class="flex-grow-1">
-                        <a href="index.html" class="nav-link active">
+                        <a href="{% url 'index' %}" class="nav-link {{ index_active }}">
                             <i class="bi bi-house"></i> <span class="rounded ms-1 py-2 px-3">Home</span>
                         </a>
                     </li>
@@ -111,7 +102,7 @@
             <section id="topbar" class="container-fluid py-2" data-aos="fade-in">
                 <div class="row">
                     <div class="col d-none d-sm-flex align-items-center">
-                        <img src="static/img/logo/endorsement-logo-white-300x27.png"
+                        <img src="{% static 'base/img/logo/endorsement-logo-white-300x27.png' %}"
                              width=""
                              height=""
                              alt=""
@@ -136,7 +127,7 @@
                         <a href="https://www.minet.com/kenya/"
                            target="_blank"
                            class="d-block mt-1">
-                            <img src="static/img/logo/logo-white-300x78.png"
+                            <img src="{% static 'base/img/logo/logo-white-300x78.png' %}"
                                  width=""
                                  height=""
                                  alt=""
@@ -150,95 +141,8 @@
                     </div>
                 </div>
             </header>
-            <!-- ======= Index Content ======= -->
-            <section id="index-content" class="flex-grow-1 container-fluid text-center">
-                <div class="row g-4 h-100 my-auto">
-                    <div class="col-6 col-xl-3 d-flex justify-content-center align-items-center"
-                         data-aos="fade-up"
-                         data-aos-delay="200">
-                        <a id="individual-solutions"
-                           class="solutions-img position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
-                           hx-get="static/html/individual-solutions.html"
-                           hx-trigger="click"
-                           hx-target="#index-content"
-                           hx-swap="outerHTML">
-                            <img src="static/img/home/main/solutions-1.png"
-                                 width=""
-                                 height=""
-                                 alt="individual-solutions icon"
-                                 class="normalimg img-fluid">
-                            <img src="static/img/home/main/solutions-1-hover.png"
-                                 width=""
-                                 height=""
-                                 alt="individual-solutions icon"
-                                 class="hoverimg img-fluid d-none">
-                            <h2>Individual Solutions</h2>
-                        </a>
-                    </div>
-                    <div class="col-6 col-xl-3 d-flex justify-content-center align-items-center"
-                         data-aos="fade-up"
-                         data-aos-delay="400">
-                        <a id="business-solutions"
-                           class="solutions-img position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
-                           href="https://retail.minet.co.ke/biznasure/"
-                           target="_blank">
-                            <img src="static/img/home/main/solutions-2.png"
-                                 width=""
-                                 height=""
-                                 alt="business-solutions icon"
-                                 class="normalimg img-fluid">
-                            <img src="static/img/home/main/solutions-2-hover.png"
-                                 width=""
-                                 height=""
-                                 alt="business-solutions icon"
-                                 class="hoverimg img-fluid d-none">
-                            <h2>Business Solutions</h2>
-                        </a>
-                    </div>
-                    <div class="col-6 col-xl-3 d-flex justify-content-center align-items-center"
-                         data-aos="fade-up"
-                         data-aos-delay="600">
-                        <a id="corporate-product"
-                           class="solutions-img position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
-                           hx-get="static/html/individual-solutions.html"
-                           hx-trigger="click"
-                           hx-target="#index-content"
-                           hx-swap="outerHTML">
-                            <img src="static/img/home/main/solutions-3.png"
-                                 width=""
-                                 height=""
-                                 alt="corporate-product icon"
-                                 class="normalimg img-fluid">
-                            <img src="static/img/home/main/solutions-3-hover.png"
-                                 width=""
-                                 height=""
-                                 alt="corporate-product icon"
-                                 class="hoverimg img-fluid d-none">
-                            <h2>Corporate Product</h2>
-                        </a>
-                    </div>
-                    <div class="col-6 col-xl-3 d-flex justify-content-center align-items-center"
-                         data-aos="fade-up"
-                         data-aos-delay="800">
-                        <a id="teachers-medical-scheme"
-                           class="solutions-img position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
-                           href="https://collaborationkenya.minet.com/MinetKe/tsc"
-                           target="_blank">
-                            <img src="static/img/home/main/solutions-4.png"
-                                 width=""
-                                 height=""
-                                 alt="teachers-medical-scheme icon"
-                                 class="normalimg img-fluid">
-                            <img src="static/img/home/main/solutions-4-hover.png"
-                                 width=""
-                                 height=""
-                                 alt="teachers-medical-scheme icon"
-                                 class="hoverimg img-fluid d-none">
-                            <h2>Teacher's Medical Scheme Portal</h2>
-                        </a>
-                    </div>
-                </div>
-            </section>
+            {% block content %}
+            {% endblock content %}
             <!-- ======= Footer ======= -->
             <footer id="footer" class="mt-auto pb-4 container-fluid">
                 <div class="row">
@@ -255,11 +159,13 @@
         <!-- Preloader -->
         <div id="preloader"></div>
         <!-- Vendor JS -->
-        <script src="static/vendor/bootstrap@5.3.2/bootstrap.bundle.min.js"></script>
-        <script src="static/vendor/aos@2.3.4/aos.js"></script>
-        <script src="static/vendor/htmx@1.9.7/htmx.min.js"></script>
-        <!-- Template JS -->
-        <script src="static/js/main.js"></script>
-        <script src="static/js/index.js"></script>
+        <script src="{% static 'vendors/bootstrap@5.3.2/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'vendors/aos@2.3.4/aos.js' %}"></script>
+        <script src="{% static 'vendors/htmx@1.9.7/htmx.min.js' %}"></script>
+        <!-- Main JS -->
+        <script src="{% static 'base/js/base.js' %}"></script>
+        <!-- Other app's Js -->
+        {% block script %}
+        {% endblock script %}
     </body>
 </html>

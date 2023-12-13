@@ -1,5 +1,5 @@
-assets
-btmade
-lnbt
-workout.html
 .vscode
+assets
+*env
+__pycache__
+*sqlite3

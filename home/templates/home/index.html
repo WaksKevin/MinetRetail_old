@@ -1,0 +1,115 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block style %}
+     <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+{% endblock style %}
+{% block page-profile %}
+     <div class="page-profile py-2">
+          <div class="d-flex justify-content-center align-items-center">
+               <div class="page-profile-logo flex-shrink-1">
+                    <img src="{% static 'home/img/main/sidebar-profile.png' %}"
+                         width=""
+                         height=""
+                         alt=""
+                         class="img-fluid">
+               </div>
+               <h1 class="pt-2 ms-3 text-uppercase">Home</h1>
+          </div>
+          <hr />
+          <p class="text-center fw-bold mb-0">Welcome to Minet Insurance Brokers Solutions</p>
+     </div>
+{% endblock page-profile %}
+{% block content %}
+     <!-- ======= Index Content ======= -->
+     <section id="index-content" class="flex-grow-1 container-fluid text-center">
+          <div class="row g-4 h-100 my-auto">
+               <div class="col-6 col-xl-3 d-flex justify-content-center align-items-center"
+                    data-aos="fade-up"
+                    data-aos-delay="200">
+                    <a id="individual-solutions"
+                       class="solutions-img position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
+                       hx-get="{% static 'home/html/individual-solutions.html' %}"
+                       hx-trigger="click"
+                       hx-target="#index-content"
+                       hx-swap="outerHTML">
+                         <img src="{% static 'home/img/main/solutions-1.png' %}"
+                              width=""
+                              height=""
+                              alt="individual-solutions icon"
+                              class="normalimg img-fluid">
+                         <img src="{% static 'home/img/main/solutions-1-hover.png' %}"
+                              width=""
+                              height=""
+                              alt="individual-solutions icon"
+                              class="hoverimg img-fluid d-none">
+                         <h2>Individual Solutions</h2>
+                    </a>
+               </div>
+               <div class="col-6 col-xl-3 d-flex justify-content-center align-items-center"
+                    data-aos="fade-up"
+                    data-aos-delay="400">
+                    <a id="business-solutions"
+                       class="solutions-img position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
+                       href="https://retail.minet.co.ke/biznasure/"
+                       target="_blank">
+                         <img src="{% static 'home/img/main/solutions-2.png' %}"
+                              width=""
+                              height=""
+                              alt="business-solutions icon"
+                              class="normalimg img-fluid">
+                         <img src="{% static 'home/img/main/solutions-2-hover.png' %}"
+                              width=""
+                              height=""
+                              alt="business-solutions icon"
+                              class="hoverimg img-fluid d-none">
+                         <h2>Business Solutions</h2>
+                    </a>
+               </div>
+               <div class="col-6 col-xl-3 d-flex justify-content-center align-items-center"
+                    data-aos="fade-up"
+                    data-aos-delay="600">
+                    <a id="corporate-product"
+                       class="solutions-img position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
+                       hx-get="{% static 'home/html/individual-solutions.html' %}"
+                       hx-trigger="click"
+                       hx-target="#index-content"
+                       hx-swap="outerHTML">
+                         <img src="{% static 'home/img/main/solutions-3.png' %}"
+                              width=""
+                              height=""
+                              alt="corporate-product icon"
+                              class="normalimg img-fluid">
+                         <img src="{% static 'home/img/main/solutions-3-hover.png' %}"
+                              width=""
+                              height=""
+                              alt="corporate-product icon"
+                              class="hoverimg img-fluid d-none">
+                         <h2>Corporate Product</h2>
+                    </a>
+               </div>
+               <div class="col-6 col-xl-3 d-flex justify-content-center align-items-center"
+                    data-aos="fade-up"
+                    data-aos-delay="800">
+                    <a id="teachers-medical-scheme"
+                       class="solutions-img position-relative d-flex flex-column justify-content-center align-items-center rounded shadow"
+                       href="https://collaborationkenya.minet.com/MinetKe/tsc"
+                       target="_blank">
+                         <img src="{% static 'home/img/main/solutions-4.png' %}"
+                              width=""
+                              height=""
+                              alt="teachers-medical-scheme icon"
+                              class="normalimg img-fluid">
+                         <img src="{% static 'home/img/main/solutions-4-hover.png' %}"
+                              width=""
+                              height=""
+                              alt="teachers-medical-scheme icon"
+                              class="hoverimg img-fluid d-none">
+                         <h2>Teacher's Medical Scheme Portal</h2>
+                    </a>
+               </div>
+          </div>
+     </section>
+{% endblock content %}
+{% block script %}
+     <script src="{% static 'home/js/script.js' %}"></script>
+{% endblock script %}

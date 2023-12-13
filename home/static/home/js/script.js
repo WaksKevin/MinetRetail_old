@@ -1,4 +1,3 @@
-
 "use strict";
 /**
  * Preload Images
@@ -15,8 +14,8 @@ const preloadImages = (urls) => {
 };
 
 const imageUrls = [
-    "static/img/home/individual-solutions/bg.png",
-    "static/img/home/corporate-product/bg.png"
+    "static/home/img/individual-solutions/bg.png",
+    "static/home/img/corporate-product/bg.png"
     // Add more image URLs as needed
 ];
 
@@ -35,7 +34,7 @@ preloadImages(imageUrls).then(() => {
 
     if (individual_solutions) {
         individual_solutions.addEventListener("click", () => {
-            individualSolutionsBackground("static/img/home/individual-solutions/bg.png");
+            individualSolutionsBackground("static/home/img/individual-solutions/bg.png");
         });
     }
 
@@ -48,7 +47,7 @@ preloadImages(imageUrls).then(() => {
 
     if (corporate_product) {
         corporate_product.addEventListener("click", () => {
-            corporateProductBackground("static/img/home/corporate-product/bg.png");
+            corporateProductBackground("static/home/img/corporate-product/bg.png");
         });
     }
 });
