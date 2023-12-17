@@ -1,2 +1,0 @@
-def base(request):
-    return {}
